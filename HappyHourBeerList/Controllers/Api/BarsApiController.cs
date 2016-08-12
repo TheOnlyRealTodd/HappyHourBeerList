@@ -28,7 +28,7 @@ namespace HappyHourBeerList.Controllers.Api
         //GET /api/bars/id#
         public IHttpActionResult GetBar(int id)
         {
-            var bar = _context.Bars.SingleOrDefault(b => b.Id == id);
+            var bar = _context.Bars.SingleOrDefault(b => b.BarId == id);
             if (bar == null)
             {
                 return NotFound();
@@ -49,8 +49,8 @@ namespace HappyHourBeerList.Controllers.Api
             bar.LastUpdated = DateTime.UtcNow;
             _context.Bars.Add(bar);
             _context.SaveChanges();
-            barDto.Id = bar.Id;
-            return Created(new Uri(Request.RequestUri + "/" + bar.Id), barDto);
+            barDto.Id = bar.BarId;
+            return Created(new Uri(Request.RequestUri + "/" + bar.BarId), barDto);
         }
 
         //PUT /api/bars/id#
@@ -62,7 +62,7 @@ namespace HappyHourBeerList.Controllers.Api
                 return BadRequest();
             }
 
-            var barInDb = _context.Bars.SingleOrDefault(b => b.Id == id);
+            var barInDb = _context.Bars.SingleOrDefault(b => b.BarId == id);
             if (barInDb == null)
             {
                 return NotFound();

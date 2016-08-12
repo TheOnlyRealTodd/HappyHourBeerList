@@ -218,6 +218,7 @@
     <Compile Include="Controllers\BarController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
+    <Compile Include="Dtos\AddressDto.cs" />
     <Compile Include="Dtos\BarBeerDto.cs" />
     <Compile Include="Dtos\BarDto.cs" />
     <Compile Include="Dtos\BeerDto.cs" />

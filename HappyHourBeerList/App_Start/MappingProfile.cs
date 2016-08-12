@@ -24,9 +24,9 @@ namespace HappyHourBeerList.App_Start
             Mapper.CreateMap<BarFormViewModel, Address>();
             Mapper.CreateMap<Address, BarFormViewModel>();
             Mapper.CreateMap<Address, BarFormViewModel>()
-            .ForMember(dest => dest.AddressId, o => o.MapFrom(source => source.Id));
+            .ForMember(dest => dest.Address.BarId, o => o.MapFrom(source => source.BarId));
             Mapper.CreateMap<BarFormViewModel, Address>()
-            .ForMember(dest => dest.Id, o => o.MapFrom(source => source.AddressId));
+            .ForMember(dest => dest.BarId, o => o.MapFrom(source => source.Address.BarId));
         }
     }
 }
