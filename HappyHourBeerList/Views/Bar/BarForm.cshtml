@@ -1,0 +1,88 @@
+﻿@model HappyHourBeerList.ViewModels.BarFormViewModel
+@{
+    ViewBag.Title = "Bar Editor";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+@if (Model.IsNew)
+{
+    <h2>Add New Bar</h2>
+}
+else
+{
+    <h2>Edit Bar: @Model.Name</h2>
+}
+
+
+@using (Html.BeginForm("Save", "Bar"))
+{
+    @Html.ValidationSummary()
+    <div class="form-group">
+        @Html.LabelFor(m => m.Name)
+        @Html.TextBoxFor(m => m.Name, new { @class = "form-control" })
+        @Html.ValidationMessageFor(m => m.Name)
+    </div>
+    <div class="form-group">
+        @Html.LabelFor(m => m.GooglePlaceId)
+        @Html.TextBoxFor(m => m.GooglePlaceId, new {@class = "form-control"})
+        @Html.ValidationMessageFor(m => m.GooglePlaceId)
+    </div>
+
+    <div class="form-group">
+        @Html.LabelFor(m => m.SundayDiscounts)
+        @Html.TextAreaFor(m => m.SundayDiscounts, new {@class = "form-control"})
+    </div>
+    <div class="form-group">
+        @Html.LabelFor(m => m.MondayDiscounts)
+        @Html.TextAreaFor(m => m.MondayDiscounts, new {@class = "form-control"})
+    </div>
+
+    <div class="form-group">
+        @Html.LabelFor(m => m.TuesdayDiscounts)
+        @Html.TextAreaFor(m => m.TuesdayDiscounts, new {@class = "form-control"})
+    </div>
+    <div class="form-group">
+        @Html.LabelFor(m => m.WednesdayDiscounts)
+        @Html.TextAreaFor(m => m.WednesdayDiscounts, new {@class = "form-control"})
+    </div>
+    <div class="form-group">
+        @Html.LabelFor(m => m.ThursdayDiscounts)
+        @Html.TextAreaFor(m => m.ThursdayDiscounts, new {@class = "form-control"})
+    </div>
+    <div class="form-group">
+        @Html.LabelFor(m => m.FridayDiscounts)
+        @Html.TextAreaFor(m => m.FridayDiscounts, new { @class = "form-control" })
+    </div>
+    <div class="form-group">
+        @Html.LabelFor(m => m.SaturdayDiscounts)
+        @Html.TextAreaFor(m => m.SaturdayDiscounts, new {@class = "form-control"})
+    </div>
+    <div class="form-group">
+        @Html.LabelFor(m => m.Number)
+        @Html.TextBoxFor(m => m.Number, new {@class = "form-control", @type = "number"})
+    </div>
+    <div class="form-group">
+        @Html.LabelFor(m => m.StreetName)
+        @Html.TextBoxFor(m => m.StreetName, new {@class = "form-control"})
+    </div>
+    <div class="form-group">
+        @Html.LabelFor(m => m.City)
+        @Html.TextBoxFor(m => m.City, new {@class = "form-control"})
+    </div>
+    <div class="form-group">
+        @Html.LabelFor(m => m.State)
+        @Html.TextBoxFor(m => m.State, new {@class = "form-control"})
+    </div>
+    <div class="form-group">
+        @Html.LabelFor(m => m.ZipCode)
+        @Html.TextBoxFor(m => m.ZipCode, new { @class = "form-control", @type = "number" })
+        @Html.ValidationMessageFor(m => m.ZipCode)
+    </div>
+
+
+    @Html.HiddenFor(m => m.Id)
+    @Html.HiddenFor(m => m.AddressId)
+    @Html.AntiForgeryToken()
+    <button type="submit" class="btn btn-primary">Save</button>
+
+}
