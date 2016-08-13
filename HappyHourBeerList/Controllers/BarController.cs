@@ -47,15 +47,20 @@ namespace HappyHourBeerList.Controllers
         public ActionResult Edit(int id)
         {
             
-            var bar = _context.Bars.SingleOrDefault(m => m.BarId == id);
+            var bar = _context.Bars.SingleOrDefault(b => b.BarId == id);
+            var address = _context.Addresses.SingleOrDefault(a => a.BarId == id);
             //Make sure that the id actually exists:
             if (bar == null)
             {
                 return HttpNotFound();
             }
-            var viewModel = Mapper.Map<Bar, BarFormViewModel>(bar);
+            var viewModel = new BarFormViewModel
+            {
+                Address = address,
+                Bar = bar,
+                IsNew = false
+            };
 
-            viewModel.IsNew = false;
 
             return View("BarForm", viewModel);
         }
@@ -84,7 +89,7 @@ namespace HappyHourBeerList.Controllers
             {
                 var barInDb = _context.Bars.Single(b => b.BarId == bar.BarId);
              //   var addressInDb = _context.Addresses.Single(a => a.BarId == bar.Bar.Address.BarId);
-                barInDb = bar;
+                Mapper.Map(bar, barInDb);
                 barInDb.LastUpdated = DateTime.UtcNow;
 
             }
