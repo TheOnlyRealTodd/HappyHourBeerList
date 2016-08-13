@@ -8,7 +8,7 @@ namespace HappyHourBeerList.Models
 {
     public class Beer
     {
-        public int Id { get; set; }
+        public int BeerId { get; set; }
         [Required]
         [Display(Name = "Beer Name")]
         public string Name { get; set; }

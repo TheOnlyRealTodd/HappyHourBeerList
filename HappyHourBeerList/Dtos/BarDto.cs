@@ -3,12 +3,13 @@ using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using System.Web;
+using HappyHourBeerList.Models;
 
 namespace HappyHourBeerList.Dtos
 {
     public class BarDto
     {
-        public int Id { get; set; }
+        public int BarId { get; set; }
         public string Name { get; set; }
         [Required]
         public string GooglePlaceId { get; set; }
@@ -19,6 +20,8 @@ namespace HappyHourBeerList.Dtos
         public string ThursdayDiscounts { get; set; }
         public string FridayDiscounts { get; set; }
         public string SaturdayDiscounts { get; set; }
+        public virtual Address Address { get; set; }
+        [Display(Name = "Last Updated")]
         public DateTime LastUpdated { get; set; }
     }
 }

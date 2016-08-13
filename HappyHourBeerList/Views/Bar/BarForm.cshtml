@@ -10,7 +10,7 @@
 }
 else
 {
-    <h2>Edit Bar: @Model.Name</h2>
+    <h2>Edit Bar: @Model.Bar.Name</h2>
 }
 
 
@@ -18,70 +18,70 @@ else
 {
     @Html.ValidationSummary()
     <div class="form-group">
-        @Html.LabelFor(m => m.Name)
-        @Html.TextBoxFor(m => m.Name, new { @class = "form-control" })
-        @Html.ValidationMessageFor(m => m.Name)
+        @Html.LabelFor(m => m.Bar.Name)
+        @Html.TextBoxFor(m => m.Bar.Name, new { @class = "form-control" })
+        @Html.ValidationMessageFor(m => m.Bar.Name)
     </div>
     <div class="form-group">
-        @Html.LabelFor(m => m.GooglePlaceId)
-        @Html.TextBoxFor(m => m.GooglePlaceId, new {@class = "form-control"})
-        @Html.ValidationMessageFor(m => m.GooglePlaceId)
+        @Html.LabelFor(m => m.Bar.GooglePlaceId)
+        @Html.TextBoxFor(m => m.Bar.GooglePlaceId, new {@class = "form-control"})
+        @Html.ValidationMessageFor(m => m.Bar.GooglePlaceId)
     </div>
 
     <div class="form-group">
-        @Html.LabelFor(m => m.SundayDiscounts)
-        @Html.TextAreaFor(m => m.SundayDiscounts, new {@class = "form-control"})
+        @Html.LabelFor(m => m.Bar.SundayDiscounts)
+        @Html.TextAreaFor(m => m.Bar.SundayDiscounts, new {@class = "form-control"})
     </div>
     <div class="form-group">
-        @Html.LabelFor(m => m.MondayDiscounts)
-        @Html.TextAreaFor(m => m.MondayDiscounts, new {@class = "form-control"})
+        @Html.LabelFor(m => m.Bar.MondayDiscounts)
+        @Html.TextAreaFor(m => m.Bar.MondayDiscounts, new {@class = "form-control"})
     </div>
 
     <div class="form-group">
-        @Html.LabelFor(m => m.TuesdayDiscounts)
-        @Html.TextAreaFor(m => m.TuesdayDiscounts, new {@class = "form-control"})
+        @Html.LabelFor(m => m.Bar.TuesdayDiscounts)
+        @Html.TextAreaFor(m => m.Bar.TuesdayDiscounts, new {@class = "form-control"})
     </div>
     <div class="form-group">
-        @Html.LabelFor(m => m.WednesdayDiscounts)
-        @Html.TextAreaFor(m => m.WednesdayDiscounts, new {@class = "form-control"})
+        @Html.LabelFor(m => m.Bar.WednesdayDiscounts)
+        @Html.TextAreaFor(m => m.Bar.WednesdayDiscounts, new {@class = "form-control"})
     </div>
     <div class="form-group">
-        @Html.LabelFor(m => m.ThursdayDiscounts)
-        @Html.TextAreaFor(m => m.ThursdayDiscounts, new {@class = "form-control"})
+        @Html.LabelFor(m => m.Bar.ThursdayDiscounts)
+        @Html.TextAreaFor(m => m.Bar.ThursdayDiscounts, new {@class = "form-control"})
     </div>
     <div class="form-group">
-        @Html.LabelFor(m => m.FridayDiscounts)
-        @Html.TextAreaFor(m => m.FridayDiscounts, new { @class = "form-control" })
+        @Html.LabelFor(m => m.Bar.FridayDiscounts)
+        @Html.TextAreaFor(m => m.Bar.FridayDiscounts, new { @class = "form-control" })
     </div>
     <div class="form-group">
-        @Html.LabelFor(m => m.SaturdayDiscounts)
-        @Html.TextAreaFor(m => m.SaturdayDiscounts, new {@class = "form-control"})
+        @Html.LabelFor(m => m.Bar.SaturdayDiscounts)
+        @Html.TextAreaFor(m => m.Bar.SaturdayDiscounts, new {@class = "form-control"})
     </div>
     <div class="form-group">
-        @Html.LabelFor(m => m.Number)
-        @Html.TextBoxFor(m => m.Number, new {@class = "form-control", @type = "number"})
+        @Html.LabelFor(m => m.Bar.Address.Number)
+        @Html.TextBoxFor(m => m.Bar.Address.Number, new {@class = "form-control", @type = "number"})
     </div>
     <div class="form-group">
-        @Html.LabelFor(m => m.StreetName)
-        @Html.TextBoxFor(m => m.StreetName, new {@class = "form-control"})
+        @Html.LabelFor(m => m.Bar.Address.StreetName)
+        @Html.TextBoxFor(m => m.Bar.Address.StreetName, new {@class = "form-control"})
     </div>
     <div class="form-group">
-        @Html.LabelFor(m => m.City)
-        @Html.TextBoxFor(m => m.City, new {@class = "form-control"})
+        @Html.LabelFor(m => m.Bar.Address.City)
+        @Html.TextBoxFor(m => m.Bar.Address.City, new {@class = "form-control"})
     </div>
     <div class="form-group">
-        @Html.LabelFor(m => m.State)
-        @Html.TextBoxFor(m => m.State, new {@class = "form-control"})
+        @Html.LabelFor(m => m.Bar.Address.State)
+        @Html.TextBoxFor(m => m.Bar.Address.State, new {@class = "form-control"})
     </div>
     <div class="form-group">
-        @Html.LabelFor(m => m.ZipCode)
-        @Html.TextBoxFor(m => m.ZipCode, new { @class = "form-control", @type = "number" })
-        @Html.ValidationMessageFor(m => m.ZipCode)
+        @Html.LabelFor(m => m.Bar.Address.ZipCode)
+        @Html.TextBoxFor(m => m.Bar.Address.ZipCode, new { @class = "form-control", @type = "number" })
+        @Html.ValidationMessageFor(m => m.Bar.Address.ZipCode)
     </div>
 
 
-    @Html.HiddenFor(m => m.Id)
-    @Html.HiddenFor(m => m.AddressId)
+    @Html.HiddenFor(m => m.Bar.BarId)
+    @*@Html.HiddenFor(m => m.Address.BarId)*@
     @Html.AntiForgeryToken()
     <button type="submit" class="btn btn-primary">Save</button>
 

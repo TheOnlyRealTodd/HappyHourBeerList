@@ -48,50 +48,44 @@ namespace HappyHourBeerList.Controllers
         {
             
             var bar = _context.Bars.SingleOrDefault(m => m.BarId == id);
-            var address = _context.Addresses.SingleOrDefault(a => a.BarId == id);
             //Make sure that the id actually exists:
             if (bar == null)
             {
                 return HttpNotFound();
             }
             var viewModel = Mapper.Map<Bar, BarFormViewModel>(bar);
-            if (address == null)
-            {
-                address = new Address();
-            }
-            Mapper.Map<Address, BarFormViewModel>(address, viewModel);
 
             viewModel.IsNew = false;
 
             return View("BarForm", viewModel);
         }
         [ValidateAntiForgeryToken]
-        public ActionResult Save(BarFormViewModel bar)
+        public ActionResult Save(Bar bar)
         {
             
             if (!ModelState.IsValid)
             {
-
-                bar.IsNew = false;
-                return View("BarForm", bar);
+                var viewModel = Mapper.Map<Bar, BarFormViewModel>(bar);
+                viewModel.IsNew = false;
+                return View("BarForm", viewModel);
 
             }
-            if (bar.Bar.BarId == 0)
+            if (bar.BarId == 0)
             {
 
-                var newbar = Mapper.Map<BarFormViewModel, Bar>(bar);
-                newbar.LastUpdated = DateTime.UtcNow;
-                _context.Bars.Add(newbar);
-                var addressToAdd = Mapper.Map<BarFormViewModel, Address>(bar);
+                
+                bar.LastUpdated = DateTime.UtcNow;
+                _context.Bars.Add(bar);
+                var addressToAdd = bar.Address;
                 _context.Addresses.Add(addressToAdd);
 
             }
             else
             {
-                var barInDb = _context.Bars.Single(b => b.BarId == bar.Bar.BarId);
-                var addressInDb = _context.Addresses.Single(a => a.BarId == bar.Bar.Address.BarId);
-                Mapper.Map<BarFormViewModel, Bar>(bar, barInDb);
-                Mapper.Map<BarFormViewModel, Address>(bar, addressInDb);
+                var barInDb = _context.Bars.Single(b => b.BarId == bar.BarId);
+             //   var addressInDb = _context.Addresses.Single(a => a.BarId == bar.Bar.Address.BarId);
+                barInDb = bar;
+                barInDb.LastUpdated = DateTime.UtcNow;
 
             }
             _context.SaveChanges();
