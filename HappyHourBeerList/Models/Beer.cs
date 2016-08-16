@@ -13,7 +13,8 @@ namespace HappyHourBeerList.Models
         [Display(Name = "Beer Name (Required)")]
         public string Name { get; set; }
         [Display(Name = "International Bitterness Units (IBUs)")]
-        public byte Ibu { get; set; }
+        [IbuLimitations]
+        public byte? Ibu { get; set; }
         [Display(Name = "Alcohol by volume percentage")]
         public decimal Abv { get; set; }
 
@@ -22,6 +23,8 @@ namespace HappyHourBeerList.Models
         public string Description { get; set; }
         [Display(Name = "URL to Logo (Optional)")]
         public string LogoPath { get; set; }
+
+        public DateTime DateAdded { get; set; }
 
         public ICollection<Bar> Bars { get; set; }
     }

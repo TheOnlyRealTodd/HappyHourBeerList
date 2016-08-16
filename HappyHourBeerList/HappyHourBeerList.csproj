@@ -273,16 +273,26 @@
     <Compile Include="Migrations\201608160154416_ManyToManyRelationshipForBarsandBeers.Designer.cs">
       <DependentUpon>201608160154416_ManyToManyRelationshipForBarsandBeers.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201608160850499_AddDateAddedToBeerDomain.cs" />
+    <Compile Include="Migrations\201608160850499_AddDateAddedToBeerDomain.Designer.cs">
+      <DependentUpon>201608160850499_AddDateAddedToBeerDomain.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201608160936109_MakeIbuNullable.cs" />
+    <Compile Include="Migrations\201608160936109_MakeIbuNullable.Designer.cs">
+      <DependentUpon>201608160936109_MakeIbuNullable.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\Address.cs" />
     <Compile Include="Models\Bar.cs" />
     <Compile Include="Models\Beer.cs" />
+    <Compile Include="Models\IbuLimitations.cs" />
     <Compile Include="Models\IdentityModels.cs" />
     <Compile Include="Models\ManageViewModels.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Startup.cs" />
     <Compile Include="ViewModels\BarFormViewModel.cs" />
+    <Compile Include="ViewModels\BeerFormViewModel.cs" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Content\bootstrap.css" />
@@ -349,10 +359,11 @@
     <Content Include="Views\Bar\Index.cshtml" />
     <Content Include="Views\Bar\BarForm.cshtml" />
     <Content Include="Views\Shared\EditorTemplates\Address.cshtml" />
+    <Content Include="Views\Beer\Index.cshtml" />
+    <Content Include="Views\Beer\BeerForm.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
-    <Folder Include="Views\Beer\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff" />
@@ -398,6 +409,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201608160154416_ManyToManyRelationshipForBarsandBeers.resx">
       <DependentUpon>201608160154416_ManyToManyRelationshipForBarsandBeers.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201608160850499_AddDateAddedToBeerDomain.resx">
+      <DependentUpon>201608160850499_AddDateAddedToBeerDomain.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201608160936109_MakeIbuNullable.resx">
+      <DependentUpon>201608160936109_MakeIbuNullable.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

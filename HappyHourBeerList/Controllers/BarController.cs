@@ -90,9 +90,8 @@ namespace HappyHourBeerList.Controllers
             {
                 var barInDb = _context.Bars.Include("Address").Single(b => b.BarId == bar.BarId);
                 Mapper.Map(bar, barInDb);
-                barInDb.MondayDiscounts = bar.MondayDiscounts;
                 barInDb.LastUpdated = DateTime.UtcNow;
-                barInDb.Address = bar.Address;
+
             }
             _context.SaveChanges();
 
