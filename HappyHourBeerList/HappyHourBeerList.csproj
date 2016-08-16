@@ -281,6 +281,10 @@
     <Compile Include="Migrations\201608160936109_MakeIbuNullable.Designer.cs">
       <DependentUpon>201608160936109_MakeIbuNullable.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201608162021484_AddNullableDateAddedToBarModel.cs" />
+    <Compile Include="Migrations\201608162021484_AddNullableDateAddedToBarModel.Designer.cs">
+      <DependentUpon>201608162021484_AddNullableDateAddedToBarModel.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\Address.cs" />
@@ -415,6 +419,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201608160936109_MakeIbuNullable.resx">
       <DependentUpon>201608160936109_MakeIbuNullable.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201608162021484_AddNullableDateAddedToBarModel.resx">
+      <DependentUpon>201608162021484_AddNullableDateAddedToBarModel.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

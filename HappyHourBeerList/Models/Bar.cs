@@ -31,5 +31,7 @@ namespace HappyHourBeerList.Models
         public ICollection<Beer> Beers { get; set; }
         [Display(Name = "Last Updated")]
         public DateTime LastUpdated { get; set; }
+
+        public DateTime? DateAdded { get; set; }
     }
 }

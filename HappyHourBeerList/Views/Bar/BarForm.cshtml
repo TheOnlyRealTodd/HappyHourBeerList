@@ -23,7 +23,7 @@ else
         @Html.ValidationMessageFor(m => m.Bar.Name)
     </div>
     <div class="form-group">
-        @Html.LabelFor(m => m.Bar.GooglePlaceId)
+        @Html.LabelFor(m => m.Bar.GooglePlaceId) (<a target="_blank"href="https://developers.google.com/maps/documentation/javascript/examples/places-placeid-finder">Get it</a>)
         @Html.TextBoxFor(m => m.Bar.GooglePlaceId, new {@class = "form-control"})
         @Html.ValidationMessageFor(m => m.Bar.GooglePlaceId)
     </div>

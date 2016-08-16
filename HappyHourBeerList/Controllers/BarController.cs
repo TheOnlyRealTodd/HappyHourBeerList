@@ -30,6 +30,18 @@ namespace HappyHourBeerList.Controllers
             var bars = _context.Bars.ToList();
             return View(bars);
         }
+
+        public ActionResult Create()
+        {
+            var viewModel = new BarFormViewModel
+            {
+                IsNew = true,
+                Bar = new Bar()
+            };
+            viewModel.Bar.DateAdded = DateTime.UtcNow;
+
+            return View("BarForm", viewModel);
+        }
         public ActionResult Details(int id)
         {
             var bar = _context.Bars.SingleOrDefault(b => b.BarId == id);
@@ -73,8 +85,11 @@ namespace HappyHourBeerList.Controllers
         { 
             if (!ModelState.IsValid)
             {
-                var viewModel = Mapper.Map<Bar, BarFormViewModel>(bar);
-                viewModel.IsNew = false;
+                var viewModel = new BarFormViewModel()
+                {
+                    IsNew = false,
+                    Bar = bar
+                };
                 return View("BarForm", viewModel);
 
             }
@@ -83,6 +98,7 @@ namespace HappyHourBeerList.Controllers
 
                 
                 bar.LastUpdated = DateTime.UtcNow;
+                bar.DateAdded = DateTime.UtcNow;
                 _context.Bars.Add(bar);
 
             }
