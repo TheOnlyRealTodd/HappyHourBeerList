@@ -69,7 +69,8 @@ namespace HappyHourBeerList.Controllers
             }
             if (beer.BeerId == 0)
             {
-                beer.DateAdded = DateTime.UtcNow;
+                beer.DateAdded =  DateTime.UtcNow;
+                
                 _context.Beers.Add(beer);
             }
             else

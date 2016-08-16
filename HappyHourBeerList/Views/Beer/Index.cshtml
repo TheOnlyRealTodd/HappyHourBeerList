@@ -24,11 +24,9 @@
         <th>
             @Html.DisplayNameFor(model => model.Brewer)
         </th>
+
         <th>
-            @Html.DisplayNameFor(model => model.Description)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.LogoPath)
+            Logo
         </th>
         <th></th>
     </tr>
@@ -42,16 +40,13 @@
             @Html.DisplayFor(modelItem => item.Ibu)
         </td>
         <td>
-            @Html.DisplayFor(modelItem => item.Abv)
+            @Html.DisplayFor(modelItem => item.Abv)%
         </td>
         <td>
             @Html.DisplayFor(modelItem => item.Brewer)
         </td>
         <td>
-            @Html.DisplayFor(modelItem => item.Description)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.LogoPath)
+            <img src=@item.LogoPath height="100px"/>
         </td>
         <td>
             @Html.ActionLink("Edit", "Edit", new { id=item.BeerId }) |
