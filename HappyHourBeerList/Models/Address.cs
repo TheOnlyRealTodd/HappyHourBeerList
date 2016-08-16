@@ -10,14 +10,15 @@ namespace HappyHourBeerList.Models
     public class Address
     {
         [RegularExpression("([1-9][0-9]*)", ErrorMessage = "Must be a number")]
+        [Display(Name = "Street Number")]
         public int? Number { get; set; }
+        [Display(Name = "Street Name")]
         public string StreetName { get; set; }
-
+        
         public string City { get; set; }
 
         public string State { get; set; }
-        [Required]
-       
+        [Display(Name = "ZIP Code")]
         public int ZipCode { get; set; }
 
         public virtual Bar Bar { get; set; }

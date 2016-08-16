@@ -1,0 +1,21 @@
+﻿<div class="form-group">
+    @Html.LabelFor(m => m.Bar.Address.Number)
+    @Html.TextBoxFor(m => m.Bar.Address.Number, new { @class = "form-control", @type = "number" })
+</div>
+<div class="form-group">
+    @Html.LabelFor(m => m.Bar.Address.StreetName)
+    @Html.TextBoxFor(m => m.Bar.Address.StreetName, new { @class = "form-control" })
+</div>
+<div class="form-group">
+    @Html.LabelFor(m => m.Bar.Address.City)
+    @Html.TextBoxFor(m => m.Bar.Address.City, new { @class = "form-control" })
+</div>
+<div class="form-group">
+    @Html.LabelFor(m => m.Bar.Address.State)
+    @Html.TextBoxFor(m => m.Bar.Address.State, new { @class = "form-control" })
+</div>
+<div class="form-group">
+    @Html.LabelFor(m => m.Bar.Address.ZipCode)
+    @Html.TextBoxFor(m => m.Bar.Address.ZipCode, new { @class = "form-control", @type = "number" })
+    @Html.ValidationMessageFor(m => m.Bar.Address.ZipCode)
+</div>

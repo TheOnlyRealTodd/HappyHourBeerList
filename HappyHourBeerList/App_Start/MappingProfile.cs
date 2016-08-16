@@ -17,8 +17,8 @@ namespace HappyHourBeerList.App_Start
             Mapper.CreateMap<BarDto, Bar>();
             Mapper.CreateMap<Beer, BeerDto>();
             Mapper.CreateMap<BeerDto, Beer>();
-            Mapper.CreateMap<BarBeer, BarBeerDto>();
-            Mapper.CreateMap<BarBeerDto, BarBeer>();
+            //Mapper.CreateMap<BarBeer, BarBeerDto>();
+            //Mapper.CreateMap<BarBeerDto, BarBeer>();
             Mapper.CreateMap<Bar, BarFormViewModel>();
             Mapper.CreateMap<BarFormViewModel, Bar>();
             //Mapper.CreateMap<BarFormViewModel, Address>();

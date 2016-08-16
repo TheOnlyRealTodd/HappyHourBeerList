@@ -22,8 +22,31 @@ namespace HappyHourBeerList.Models
     {
         public DbSet<Bar> Bars { get; set; }
         public DbSet<Beer> Beers { get; set; }
-        public DbSet<BarBeer> BarBeers { get; set; }
         public DbSet<Address> Addresses { get; set; }
+
+        protected override void OnModelCreating(DbModelBuilder modelBuilder)
+        {
+            //Create a 1 to 1 relationship between Bar and Address since a bar can only have one address and
+            //an address can only have one bar.
+            base.OnModelCreating(modelBuilder);
+            modelBuilder.Entity<Bar>()
+                .HasRequired(b => b.Address)
+                .WithRequiredPrincipal(a => a.Bar);
+
+            //Set up many-to-many relationship between Bars and Beers since a Bar can have many beers and
+            //a beer can be served at many bars.
+            modelBuilder.Entity<Bar>()
+                .HasMany(b => b.Beers)
+                .WithMany(b => b.Bars)
+                .Map(m => m.ToTable("BarsBeers"));
+                //.WillCascadeOnDelete(false));
+
+            modelBuilder.Entity<Bar>().Property(p => p.GooglePlaceId).IsRequired();
+            modelBuilder.Entity<Address>().Property(p => p.ZipCode).IsRequired();
+            modelBuilder.Entity<Beer>().Property(p => p.Brewer).IsRequired();
+            modelBuilder.Entity<Beer>().Property(p => p.Name).IsRequired();
+
+        }
         public ApplicationDbContext()
             : base("DefaultConnection", throwIfV1Schema: false)
         {

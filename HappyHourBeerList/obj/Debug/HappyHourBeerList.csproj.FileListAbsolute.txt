@@ -99,3 +99,5 @@ D:\Projects\HappyHourBeerList\HappyHourBeerList\obj\Debug\HappyHourBeerList.Migr
 D:\Projects\HappyHourBeerList\HappyHourBeerList\obj\Debug\HappyHourBeerList.Migrations.AddBarBeerJoinTable.resources
 D:\Projects\HappyHourBeerList\HappyHourBeerList\obj\Debug\HappyHourBeerList.Migrations.AddAddressDomainModel.resources
 D:\Projects\HappyHourBeerList\HappyHourBeerList\obj\Debug\HappyHourBeerList.Migrations.RefactorDomainModelsAndControllers.resources
+D:\Projects\HappyHourBeerList\HappyHourBeerList\obj\Debug\HappyHourBeerList.Migrations.DropOldBarBeer.resources
+D:\Projects\HappyHourBeerList\HappyHourBeerList\obj\Debug\HappyHourBeerList.Migrations.ManyToManyRelationshipForBarsandBeers.resources

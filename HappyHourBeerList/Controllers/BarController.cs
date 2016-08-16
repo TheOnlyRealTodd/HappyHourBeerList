@@ -46,28 +46,31 @@ namespace HappyHourBeerList.Controllers
 
         public ActionResult Edit(int id)
         {
-            
-            var bar = _context.Bars.SingleOrDefault(b => b.BarId == id);
-            var address = _context.Addresses.SingleOrDefault(a => a.BarId == id);
+            //Include method pulls associated bar address out of DB as well.
+            var bar = _context.Bars.Include("Address").SingleOrDefault(b => b.BarId == id);
             //Make sure that the id actually exists:
             if (bar == null)
             {
                 return HttpNotFound();
             }
+
+            if (bar.Address == null)
+            {
+                bar.Address = new Address();
+            }
+
             var viewModel = new BarFormViewModel
             {
-                Address = address,
+                Address = bar.Address,
                 Bar = bar,
                 IsNew = false
             };
-
 
             return View("BarForm", viewModel);
         }
         [ValidateAntiForgeryToken]
         public ActionResult Save(Bar bar)
-        {
-            
+        { 
             if (!ModelState.IsValid)
             {
                 var viewModel = Mapper.Map<Bar, BarFormViewModel>(bar);
@@ -81,17 +84,15 @@ namespace HappyHourBeerList.Controllers
                 
                 bar.LastUpdated = DateTime.UtcNow;
                 _context.Bars.Add(bar);
-                var addressToAdd = bar.Address;
-                _context.Addresses.Add(addressToAdd);
 
             }
             else
             {
-                var barInDb = _context.Bars.Single(b => b.BarId == bar.BarId);
-             //   var addressInDb = _context.Addresses.Single(a => a.BarId == bar.Bar.Address.BarId);
+                var barInDb = _context.Bars.Include("Address").Single(b => b.BarId == bar.BarId);
                 Mapper.Map(bar, barInDb);
+                barInDb.MondayDiscounts = bar.MondayDiscounts;
                 barInDb.LastUpdated = DateTime.UtcNow;
-
+                barInDb.Address = bar.Address;
             }
             _context.SaveChanges();
 
