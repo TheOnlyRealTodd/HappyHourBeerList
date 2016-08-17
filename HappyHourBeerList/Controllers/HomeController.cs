@@ -36,5 +36,5 @@ namespace HappyHourBeerList.Controllers
     //           new FileStream(videoPath, FileMode.Open);
     //        return new FileStreamResult(fs, "video/mp4");
     //    }
-    //}
+    }
 }

@@ -71,7 +71,12 @@ footer {
 }
 .form-group {
     color: white;
+
 }
 .customForm {
     color: white;
+}
+.form {
+    margin-left: 35%;
+    margin-right: 0%;
 }

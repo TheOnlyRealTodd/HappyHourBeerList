@@ -3,88 +3,89 @@
     ViewBag.Title = "Bar Editor";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
-
-@if (Model.IsNew)
-{
-    <h2 class="customForm">Add New Bar</h2>
-}
-else
-{
-    <h2 class="customForm">Edit Bar: @Model.Bar.Name</h2>
-}
-
-
-@using (Html.BeginForm("Save", "Bar"))
-{
-    @Html.ValidationSummary()
-    <div class="form-group">
-        @Html.LabelFor(m => m.Bar.Name)
-        @Html.TextBoxFor(m => m.Bar.Name, new { @class = "form-control" })
-        @Html.ValidationMessageFor(m => m.Bar.Name)
-    </div>
-    <div class="form-group">
-        @Html.LabelFor(m => m.Bar.GooglePlaceId) (<a target="_blank"href="https://developers.google.com/maps/documentation/javascript/examples/places-placeid-finder">Get it</a>)
-        @Html.TextBoxFor(m => m.Bar.GooglePlaceId, new {@class = "form-control"})
-        @Html.ValidationMessageFor(m => m.Bar.GooglePlaceId)
-    </div>
-
-    <div class="form-group">
-        @Html.LabelFor(m => m.Bar.SundayDiscounts)
-        @Html.TextAreaFor(m => m.Bar.SundayDiscounts, new {@class = "form-control"})
-    </div>
-    <div class="form-group">
-        @Html.LabelFor(m => m.Bar.MondayDiscounts)
-        @Html.TextAreaFor(m => m.Bar.MondayDiscounts, new {@class = "form-control"})
-    </div>
-
-    <div class="form-group">
-        @Html.LabelFor(m => m.Bar.TuesdayDiscounts)
-        @Html.TextAreaFor(m => m.Bar.TuesdayDiscounts, new {@class = "form-control"})
-    </div>
-    <div class="form-group">
-        @Html.LabelFor(m => m.Bar.WednesdayDiscounts)
-        @Html.TextAreaFor(m => m.Bar.WednesdayDiscounts, new {@class = "form-control"})
-    </div>
-    <div class="form-group">
-        @Html.LabelFor(m => m.Bar.ThursdayDiscounts)
-        @Html.TextAreaFor(m => m.Bar.ThursdayDiscounts, new {@class = "form-control"})
-    </div>
-    <div class="form-group">
-        @Html.LabelFor(m => m.Bar.FridayDiscounts)
-        @Html.TextAreaFor(m => m.Bar.FridayDiscounts, new { @class = "form-control" })
-    </div>
-    <div class="form-group">
-        @Html.LabelFor(m => m.Bar.SaturdayDiscounts)
-        @Html.TextAreaFor(m => m.Bar.SaturdayDiscounts, new {@class = "form-control"})
-    </div>
-    <div class="form-group">
-        @Html.LabelFor(m => m.Bar.Address.Number)
-        @Html.TextBoxFor(m => m.Bar.Address.Number, new {@class = "form-control", @type = "number"})
-    </div>
-    <div class="form-group">
-        @Html.LabelFor(m => m.Bar.Address.StreetName)
-        @Html.TextBoxFor(m => m.Bar.Address.StreetName, new {@class = "form-control"})
-    </div>
-    <div class="form-group">
-        @Html.LabelFor(m => m.Bar.Address.City)
-        @Html.TextBoxFor(m => m.Bar.Address.City, new {@class = "form-control"})
-    </div>
-    <div class="form-group">
-        @Html.LabelFor(m => m.Bar.Address.State)
-        @Html.TextBoxFor(m => m.Bar.Address.State, new {@class = "form-control"})
-    </div>
-    <div class="form-group">
-        @Html.LabelFor(m => m.Bar.Address.ZipCode)
-        @Html.TextBoxFor(m => m.Bar.Address.ZipCode, new {@class = "form-control", @type = "number"})
-        @Html.ValidationMessageFor(m => m.Bar.Address.ZipCode)
-    </div>
-    @*You could actually put this form into a separate file like so: See Address.cshtml in EditorTemplates folder
-    @Html.EditorFor(m => m.Address)*@
+<div class="form">
+    @if (Model.IsNew)
+    {
+        <h2 class="customForm">Add New Tap Room</h2>
+    }
+    else
+    {
+        <h2 class="customForm">Edit Bar: @Model.Bar.Name</h2>
+    }
 
 
-    @Html.HiddenFor(m => m.Bar.BarId)
-    @*@Html.HiddenFor(m => m.Address.BarId)*@
-    @Html.AntiForgeryToken()
-    <button type="submit" class="btn btn-primary">Save</button>
+    @using (Html.BeginForm("Save", "Bar"))
+    {
+        @Html.ValidationSummary()
+        <div class="form-group">
+            @Html.LabelFor(m => m.Bar.Name)
+            @Html.TextBoxFor(m => m.Bar.Name, new { @class = "form-control" })
+            @Html.ValidationMessageFor(m => m.Bar.Name)
+        </div>
+        <div class="form-group">
+            @Html.LabelFor(m => m.Bar.GooglePlaceId) (<a target="_blank" href="https://developers.google.com/maps/documentation/javascript/examples/places-placeid-finder">Get it</a>)
+            @Html.TextBoxFor(m => m.Bar.GooglePlaceId, new { @class = "form-control" })
+            @Html.ValidationMessageFor(m => m.Bar.GooglePlaceId)
+        </div>
 
-}
+        <div class="form-group">
+            @Html.LabelFor(m => m.Bar.SundayDiscounts)
+            @Html.TextAreaFor(m => m.Bar.SundayDiscounts, new { @class = "form-control" })
+        </div>
+        <div class="form-group">
+            @Html.LabelFor(m => m.Bar.MondayDiscounts)
+            @Html.TextAreaFor(m => m.Bar.MondayDiscounts, new { @class = "form-control" })
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(m => m.Bar.TuesdayDiscounts)
+            @Html.TextAreaFor(m => m.Bar.TuesdayDiscounts, new { @class = "form-control" })
+        </div>
+        <div class="form-group">
+            @Html.LabelFor(m => m.Bar.WednesdayDiscounts)
+            @Html.TextAreaFor(m => m.Bar.WednesdayDiscounts, new { @class = "form-control" })
+        </div>
+        <div class="form-group">
+            @Html.LabelFor(m => m.Bar.ThursdayDiscounts)
+            @Html.TextAreaFor(m => m.Bar.ThursdayDiscounts, new { @class = "form-control" })
+        </div>
+        <div class="form-group">
+            @Html.LabelFor(m => m.Bar.FridayDiscounts)
+            @Html.TextAreaFor(m => m.Bar.FridayDiscounts, new { @class = "form-control" })
+        </div>
+        <div class="form-group">
+            @Html.LabelFor(m => m.Bar.SaturdayDiscounts)
+            @Html.TextAreaFor(m => m.Bar.SaturdayDiscounts, new { @class = "form-control" })
+        </div>
+        <div class="form-group">
+            @Html.LabelFor(m => m.Bar.Address.Number)
+            @Html.TextBoxFor(m => m.Bar.Address.Number, new { @class = "form-control", @type = "number" })
+        </div>
+        <div class="form-group">
+            @Html.LabelFor(m => m.Bar.Address.StreetName)
+            @Html.TextBoxFor(m => m.Bar.Address.StreetName, new { @class = "form-control" })
+        </div>
+        <div class="form-group">
+            @Html.LabelFor(m => m.Bar.Address.City)
+            @Html.TextBoxFor(m => m.Bar.Address.City, new { @class = "form-control" })
+        </div>
+        <div class="form-group">
+            @Html.LabelFor(m => m.Bar.Address.State)
+            @Html.TextBoxFor(m => m.Bar.Address.State, new { @class = "form-control" })
+        </div>
+        <div class="form-group">
+            @Html.LabelFor(m => m.Bar.Address.ZipCode)
+            @Html.TextBoxFor(m => m.Bar.Address.ZipCode, new { @class = "form-control", @type = "number" })
+            @Html.ValidationMessageFor(m => m.Bar.Address.ZipCode)
+        </div>
+        @*You could actually put this form into a separate file like so: See Address.cshtml in EditorTemplates folder
+            @Html.EditorFor(m => m.Address)*@
+
+
+        @Html.HiddenFor(m => m.Bar.BarId)
+        @*@Html.HiddenFor(m => m.Address.BarId)*@
+        @Html.AntiForgeryToken()
+        <button type="submit" class="btn btn-primary">Save</button>
+
+    }
+</div>
