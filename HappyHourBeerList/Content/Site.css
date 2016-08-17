@@ -28,3 +28,16 @@ textarea {
 .validation-summary-errors {
     color: red;
 }
+div #splash {
+    background-image: url("https://static.pexels.com/photos/27431/pexels-photo-27431.jpg");
+    color: #ff9933;
+}
+.brewers {
+    background-color: rgba(51, 207, 255, 0.5);
+}
+.taprooms {
+    background-color: rgba(0, 136, 178, 0.5);
+}
+.beerlovers {
+    background-color: rgba(255, 166, 76, 1);
+}
