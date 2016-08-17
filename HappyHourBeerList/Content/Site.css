@@ -1,7 +1,7 @@
 ﻿body {
     padding-top: 50px;
     padding-bottom: 20px;
-    background-color: rgb(41, 128, 185);
+    background-color: rgb(64, 64, 64);
 }
 
 /* Set padding to keep content from hitting the edges */
@@ -50,10 +50,28 @@ div #splash {
 #taproomlink {
     color:rgba(0, 136, 178, 1);
 }
-#homelink {
+#titlelink {
     color: rgba(0, 136, 178, 1);
+}
+#homelink {
+    color: white;
 }
 #filter {
     background-color: rgba(0, 0, 0, .75);
     border: 1px dotted white;
+}
+#taproomListWell {
+    padding: 0px;
+}
+div.navbar {
+    background-color: rgba(0, 0, 0, 0.25)
+}
+footer {
+    color: white;
+}
+.form-group {
+    color: white;
+}
+.customForm {
+    color: white;
 }

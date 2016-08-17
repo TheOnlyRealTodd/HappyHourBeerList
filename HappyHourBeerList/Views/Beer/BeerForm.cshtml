@@ -6,11 +6,11 @@
 
 @if (Model.IsNew)
 {
-    <h2>Add New Beer</h2>
+    <h2 class="customForm">Add New Beer</h2>
 }
 else
 {
-    <h2>Edit Beer: @Model.Beer.Name</h2>
+    <h2 class="customForm">Edit Beer: @Model.Beer.Name</h2>
 }
 
 @using (Html.BeginForm("Save", "Beer"))

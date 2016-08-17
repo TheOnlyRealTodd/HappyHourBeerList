@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
@@ -26,5 +27,14 @@ namespace HappyHourBeerList.Controllers
 
             return View();
         }
-    }
+
+    //    public ActionResult GetVideo()
+    //    {
+    //        var videoPath =
+    //           Request.MapPath("~/Views/Home/images/beer.mp4");
+    //        FileStream fs =
+    //           new FileStream(videoPath, FileMode.Open);
+    //        return new FileStreamResult(fs, "video/mp4");
+    //    }
+    //}
 }

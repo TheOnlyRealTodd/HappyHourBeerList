@@ -325,6 +325,7 @@
     <Content Include="Scripts\respond.js" />
     <Content Include="Scripts\respond.min.js" />
     <Content Include="Scripts\_references.js" />
+    <Content Include="Views\Home\images\beer.mp4" />
     <Content Include="Views\Home\images\JumbotronSplashResized.jpg" />
     <Content Include="Web.config">
       <SubType>Designer</SubType>
