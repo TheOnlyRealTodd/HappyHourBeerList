@@ -37,6 +37,7 @@ div #splash {
 }
 .brewers {
     background-color: rgba(51, 207, 255, 1);
+    margin-right: 5px;
 }
 .taprooms {
     background-color: rgba(0, 136, 178, 1);
@@ -79,4 +80,13 @@ footer {
 .form {
     margin-left: 35%;
     margin-right: 0%;
+}
+#brewerHomebox {
+    padding-right: 10px;
+}
+#taproomHomebox {
+    padding-right: 20px;
+}
+#centerTitle {
+    text-align: center;
 }

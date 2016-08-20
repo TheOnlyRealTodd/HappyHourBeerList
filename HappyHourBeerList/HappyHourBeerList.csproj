@@ -290,6 +290,7 @@
     <Compile Include="Models\Address.cs" />
     <Compile Include="Models\Bar.cs" />
     <Compile Include="Models\Beer.cs" />
+    <Compile Include="Models\Brewer.cs" />
     <Compile Include="Models\IbuLimitations.cs" />
     <Compile Include="Models\IdentityModels.cs" />
     <Compile Include="Models\ManageViewModels.cs" />
