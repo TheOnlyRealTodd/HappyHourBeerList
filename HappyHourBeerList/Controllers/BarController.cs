@@ -39,6 +39,7 @@ namespace HappyHourBeerList.Controllers
                 Bar = new Bar()
             };
             viewModel.Bar.DateAdded = DateTime.UtcNow;
+            viewModel.Bar.BusinessType.BusinessTypeId = 1;
 
             return View("BarForm", viewModel);
         }
@@ -99,6 +100,8 @@ namespace HappyHourBeerList.Controllers
                 
                 bar.LastUpdated = DateTime.UtcNow;
                 bar.DateAdded = DateTime.UtcNow;
+                bar.BusinessType.BusinessTypeId = 1;
+                bar.Address.BusinessId = bar.BarId;
                 _context.Bars.Add(bar);
 
             }
@@ -106,6 +109,8 @@ namespace HappyHourBeerList.Controllers
             {
                 var barInDb = _context.Bars.Include("Address").Single(b => b.BarId == bar.BarId);
                 Mapper.Map(bar, barInDb);
+                barInDb.BusinessType.BusinessTypeId = 1;
+                barInDb.Address.BusinessId = bar.BarId;
                 barInDb.LastUpdated = DateTime.UtcNow;
 
             }

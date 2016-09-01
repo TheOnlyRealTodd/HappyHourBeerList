@@ -9,6 +9,8 @@ namespace HappyHourBeerList.Models
 {
     public class Address
     {
+        //[Key]
+        public int AddressId { get; set; }
         [RegularExpression("([1-9][0-9]*)", ErrorMessage = "Must be a number")]
         [Display(Name = "Street Number")]
         public int? Number { get; set; }
@@ -20,10 +22,8 @@ namespace HappyHourBeerList.Models
         public string State { get; set; }
         [Display(Name = "ZIP Code")]
         public int ZipCode { get; set; }
+        public int BusinessId { get; set; }
+        public BusinessType BusinessType { get; set; }
 
-        public virtual Bar Bar { get; set; }
-        [Key]
-        [ForeignKey("Bar")]
-        public int BarId { get; set; }
     }
 }

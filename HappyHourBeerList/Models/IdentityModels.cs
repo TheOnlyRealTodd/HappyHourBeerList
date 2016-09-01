@@ -23,15 +23,22 @@ namespace HappyHourBeerList.Models
         public DbSet<Bar> Bars { get; set; }
         public DbSet<Beer> Beers { get; set; }
         public DbSet<Address> Addresses { get; set; }
+        public DbSet<Brewer> Brewers { get; set; }
+        public DbSet<BusinessType> BusinessTypes{ get; set; }
 
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {
             //Create a 1 to 1 relationship between Bar and Address since a bar can only have one address and
-            //an address can only have one bar.
+            //an address can only have one bar. Same for Brewer and Address. Also made Address foreign keys nullable since one Address record will either be associated with EITHER
+            //A Brewer OR a Bar but not both.
             base.OnModelCreating(modelBuilder);
-            modelBuilder.Entity<Bar>()
-                .HasRequired(b => b.Address)
-                .WithRequiredPrincipal(a => a.Bar);
+            //modelBuilder.Entity<Bar>()
+            //    .HasRequired(b => b.Address)
+            //    .WithOptional(a => a.Bar);
+
+            //modelBuilder.Entity<Brewer>()
+            //    .HasRequired(b => b.Address)
+            //    .WithOptional(a => a.Brewer);
 
             //Set up many-to-many relationship between Bars and Beers since a Bar can have many beers and
             //a beer can be served at many bars.

@@ -90,3 +90,7 @@ footer {
 #centerTitle {
     text-align: center;
 }
+.brightBack {
+    color: black;
+    font-weight: bolder;
+}

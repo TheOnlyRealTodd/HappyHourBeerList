@@ -104,3 +104,7 @@ D:\Projects\HappyHourBeerList\HappyHourBeerList\obj\Debug\HappyHourBeerList.Migr
 D:\Projects\HappyHourBeerList\HappyHourBeerList\obj\Debug\HappyHourBeerList.Migrations.AddDateAddedToBeerDomain.resources
 D:\Projects\HappyHourBeerList\HappyHourBeerList\obj\Debug\HappyHourBeerList.Migrations.MakeIbuNullable.resources
 D:\Projects\HappyHourBeerList\HappyHourBeerList\obj\Debug\HappyHourBeerList.Migrations.AddNullableDateAddedToBarModel.resources
+D:\Projects\HappyHourBeerList\HappyHourBeerList\obj\Debug\HappyHourBeerList.Migrations.AddBrewerAndFixAddressRelationshiptoBarandBrewer.resources
+D:\Projects\HappyHourBeerList\HappyHourBeerList\obj\Debug\HappyHourBeerList.Migrations.AddBusinessTypeToAddress.resources
+D:\Projects\HappyHourBeerList\HappyHourBeerList\obj\Debug\HappyHourBeerList.Migrations.SeedDbWithBusinessTypes.resources
+D:\Projects\HappyHourBeerList\HappyHourBeerList\obj\Debug\HappyHourBeerList.Migrations.RemoveRequiredBusinessTypeName.resources
