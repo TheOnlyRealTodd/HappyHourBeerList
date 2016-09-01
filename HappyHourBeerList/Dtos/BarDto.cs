@@ -20,7 +20,6 @@ namespace HappyHourBeerList.Dtos
         public string ThursdayDiscounts { get; set; }
         public string FridayDiscounts { get; set; }
         public string SaturdayDiscounts { get; set; }
-        public virtual Address Address { get; set; }
         [Display(Name = "Last Updated")]
         public DateTime LastUpdated { get; set; }
     }

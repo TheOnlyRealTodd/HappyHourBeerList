@@ -10,7 +10,6 @@ namespace HappyHourBeerList.ViewModels
 {
     public class BarFormViewModel
     {
-        public Address Address { get; set; }
         public Bar Bar { get; set; }
 
         public bool IsNew { get; set; }

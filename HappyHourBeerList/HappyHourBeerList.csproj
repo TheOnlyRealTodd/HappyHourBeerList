@@ -301,13 +301,15 @@
     <Compile Include="Migrations\201609010914405_RemoveRequiredBusinessTypeName.Designer.cs">
       <DependentUpon>201609010914405_RemoveRequiredBusinessTypeName.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201609012338177_RemoveUnnecessaryAddressComplexityFromBarandBrewerModels.cs" />
+    <Compile Include="Migrations\201609012338177_RemoveUnnecessaryAddressComplexityFromBarandBrewerModels.Designer.cs">
+      <DependentUpon>201609012338177_RemoveUnnecessaryAddressComplexityFromBarandBrewerModels.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
-    <Compile Include="Models\Address.cs" />
     <Compile Include="Models\Bar.cs" />
     <Compile Include="Models\Beer.cs" />
     <Compile Include="Models\Brewer.cs" />
-    <Compile Include="Models\BusinessType.cs" />
     <Compile Include="Models\IbuLimitations.cs" />
     <Compile Include="Models\IdentityModels.cs" />
     <Compile Include="Models\ManageViewModels.cs" />
@@ -455,6 +457,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201609010914405_RemoveRequiredBusinessTypeName.resx">
       <DependentUpon>201609010914405_RemoveRequiredBusinessTypeName.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201609012338177_RemoveUnnecessaryAddressComplexityFromBarandBrewerModels.resx">
+      <DependentUpon>201609012338177_RemoveUnnecessaryAddressComplexityFromBarandBrewerModels.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

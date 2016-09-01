@@ -14,14 +14,24 @@ namespace HappyHourBeerList.Models
         public string Name { get; set; }
         public string Description { get; set; }
         public string LogoUrl { get; set; }
-        public virtual Address Address { get; set; }
+
+        //Address Information BEGIN:
+        [RegularExpression("([1-9][0-9]*)", ErrorMessage = "Must be a number")]
+        [Display(Name = "Street Number")]
+        public int? Number { get; set; }
+        [Display(Name = "Street Name")]
+        public string StreetName { get; set; }
+
+        public string City { get; set; }
+
+        public string State { get; set; }
+        [Display(Name = "ZIP Code")]
+        public int ZipCode { get; set; }
+        //Address Information END
         public ICollection<Beer> Beers { get; set; }
         [Display(Name = "Last Updated")]
         public DateTime LastUpdated { get; set; }
 
         public DateTime? DateAdded { get; set; }
-        public BusinessType BusinessType { get; set; }
-        [ForeignKey("BusinessType")]
-        public byte BusinessTypeId { get; set; }
     }
 }

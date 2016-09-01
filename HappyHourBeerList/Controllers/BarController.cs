@@ -39,7 +39,6 @@ namespace HappyHourBeerList.Controllers
                 Bar = new Bar()
             };
             viewModel.Bar.DateAdded = DateTime.UtcNow;
-            viewModel.Bar.BusinessType.BusinessTypeId = 1;
 
             return View("BarForm", viewModel);
         }
@@ -60,21 +59,15 @@ namespace HappyHourBeerList.Controllers
         public ActionResult Edit(int id)
         {
             //Include method pulls associated bar address out of DB as well.
-            var bar = _context.Bars.Include("Address").SingleOrDefault(b => b.BarId == id);
+            var bar = _context.Bars.SingleOrDefault(b => b.BarId == id);
             //Make sure that the id actually exists:
             if (bar == null)
             {
                 return HttpNotFound();
             }
 
-            if (bar.Address == null)
-            {
-                bar.Address = new Address();
-            }
-
             var viewModel = new BarFormViewModel
             {
-                Address = bar.Address,
                 Bar = bar,
                 IsNew = false
             };
@@ -100,17 +93,13 @@ namespace HappyHourBeerList.Controllers
                 
                 bar.LastUpdated = DateTime.UtcNow;
                 bar.DateAdded = DateTime.UtcNow;
-                bar.BusinessType.BusinessTypeId = 1;
-                bar.Address.BusinessId = bar.BarId;
                 _context.Bars.Add(bar);
 
             }
             else
             {
-                var barInDb = _context.Bars.Include("Address").Single(b => b.BarId == bar.BarId);
+                var barInDb = _context.Bars.Single(b => b.BarId == bar.BarId);
                 Mapper.Map(bar, barInDb);
-                barInDb.BusinessType.BusinessTypeId = 1;
-                barInDb.Address.BusinessId = bar.BarId;
                 barInDb.LastUpdated = DateTime.UtcNow;
 
             }

@@ -58,33 +58,31 @@
             @Html.TextAreaFor(m => m.Bar.SaturdayDiscounts, new { @class = "form-control" })
         </div>
         <div class="form-group">
-            @Html.LabelFor(m => m.Bar.Address.Number)
-            @Html.TextBoxFor(m => m.Bar.Address.Number, new { @class = "form-control", @type = "number" })
+            @Html.LabelFor(m => m.Bar.Number)
+            @Html.TextBoxFor(m => m.Bar.Number, new { @class = "form-control", @type = "number" })
         </div>
         <div class="form-group">
-            @Html.LabelFor(m => m.Bar.Address.StreetName)
-            @Html.TextBoxFor(m => m.Bar.Address.StreetName, new { @class = "form-control" })
+            @Html.LabelFor(m => m.Bar.StreetName)
+            @Html.TextBoxFor(m => m.Bar.StreetName, new { @class = "form-control" })
         </div>
         <div class="form-group">
-            @Html.LabelFor(m => m.Bar.Address.City)
-            @Html.TextBoxFor(m => m.Bar.Address.City, new { @class = "form-control" })
+            @Html.LabelFor(m => m.Bar.City)
+            @Html.TextBoxFor(m => m.Bar.City, new { @class = "form-control" })
         </div>
         <div class="form-group">
-            @Html.LabelFor(m => m.Bar.Address.State)
-            @Html.TextBoxFor(m => m.Bar.Address.State, new { @class = "form-control" })
+            @Html.LabelFor(m => m.Bar.State)
+            @Html.TextBoxFor(m => m.Bar.State, new { @class = "form-control" })
         </div>
         <div class="form-group">
-            @Html.LabelFor(m => m.Bar.Address.ZipCode)
-            @Html.TextBoxFor(m => m.Bar.Address.ZipCode, new { @class = "form-control", @type = "number" })
-            @Html.ValidationMessageFor(m => m.Bar.Address.ZipCode)
+            @Html.LabelFor(m => m.Bar.ZipCode)
+            @Html.TextBoxFor(m => m.Bar.ZipCode, new { @class = "form-control", @type = "number" })
+            @Html.ValidationMessageFor(m => m.Bar.ZipCode)
         </div>
         @*You could actually put this form into a separate file like so: See Address.cshtml in EditorTemplates folder
             @Html.EditorFor(m => m.Address)*@
 
 
         @Html.HiddenFor(m => m.Bar.BarId)
-        @Html.HiddenFor(m => m.Bar.BusinessType.BusinessTypeId)
-        @*@Html.HiddenFor(m => m.Address.BarId)*@
         @Html.AntiForgeryToken()
         <button type="submit" class="btn btn-primary">Save</button>
 
