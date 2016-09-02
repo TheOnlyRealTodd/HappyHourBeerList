@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 using System.Linq;
@@ -13,8 +14,10 @@ namespace HappyHourBeerList.Models
         public int BrewerId { get; set; }
         public string Name { get; set; }
         public string Description { get; set; }
+        [Display(Name = "Google Place ID")]
         public string GooglePlaceId { get; set; }
-        public string LogoUrl { get; set; }
+        [Display(Name = "Your Brewery's Logo URL")]
+        public string LogoPath { get; set; }
 
         //Address Information BEGIN:
         [RegularExpression("([1-9][0-9]*)", ErrorMessage = "Must be a number")]

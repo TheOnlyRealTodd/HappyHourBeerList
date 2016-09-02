@@ -19,13 +19,24 @@
         @Html.ValidationSummary()
         <div class="form-group">
             @Html.LabelFor(m => m.Brewer.Name)
-            @Html.TextBoxFor(m => m.Brewer.Name, new { @class = "form-control" })
+            @Html.TextBoxFor(m => m.Brewer.Name, new {@class = "form-control"})
             @Html.ValidationMessageFor(m => m.Brewer.Name)
         </div>
         <div class="form-group">
+            @Html.LabelFor(m => m.Brewer.Description) 
+            @Html.TextAreaFor(m => m.Brewer.Description, new { @class = "form-control" })
+            @Html.ValidationMessageFor(m => m.Brewer.Description)
+        </div>
+
+        <div class="form-group">
             @Html.LabelFor(m => m.Brewer.GooglePlaceId) (<a target="_blank" href="https://developers.google.com/maps/documentation/javascript/examples/places-placeid-finder">Get it</a>)
-            @Html.TextBoxFor(m => m.Brewer.GooglePlaceId, new { @class = "form-control" })
+            @Html.TextBoxFor(m => m.Brewer.GooglePlaceId, new {@class = "form-control"})
             @Html.ValidationMessageFor(m => m.Brewer.GooglePlaceId)
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(m => m.Brewer.LogoPath)
+            @Html.TextBoxFor(m => m.Brewer.LogoPath, new { @class = "form-control" })
         </div>
 
 

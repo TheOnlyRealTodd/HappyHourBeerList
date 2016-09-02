@@ -110,3 +110,4 @@ D:\Projects\HappyHourBeerList\HappyHourBeerList\obj\Debug\HappyHourBeerList.Migr
 D:\Projects\HappyHourBeerList\HappyHourBeerList\obj\Debug\HappyHourBeerList.Migrations.RemoveRequiredBusinessTypeName.resources
 D:\Projects\HappyHourBeerList\HappyHourBeerList\obj\Debug\HappyHourBeerList.Migrations.RemoveUnnecessaryAddressComplexityFromBarandBrewerModels.resources
 D:\Projects\HappyHourBeerList\HappyHourBeerList\obj\Debug\HappyHourBeerList.Migrations.AddGooglePlaceIdToBrewer.resources
+D:\Projects\HappyHourBeerList\HappyHourBeerList\obj\Debug\HappyHourBeerList.Migrations.ChangeBrewerLogoUrlToLogoPathToBeConsistent.resources

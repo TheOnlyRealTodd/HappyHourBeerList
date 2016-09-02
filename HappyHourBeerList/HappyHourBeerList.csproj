@@ -310,6 +310,10 @@
     <Compile Include="Migrations\201609020406242_AddGooglePlaceIdToBrewer.Designer.cs">
       <DependentUpon>201609020406242_AddGooglePlaceIdToBrewer.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201609020448314_ChangeBrewerLogoUrlToLogoPathToBeConsistent.cs" />
+    <Compile Include="Migrations\201609020448314_ChangeBrewerLogoUrlToLogoPathToBeConsistent.Designer.cs">
+      <DependentUpon>201609020448314_ChangeBrewerLogoUrlToLogoPathToBeConsistent.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\Bar.cs" />
@@ -471,6 +475,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201609020406242_AddGooglePlaceIdToBrewer.resx">
       <DependentUpon>201609020406242_AddGooglePlaceIdToBrewer.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201609020448314_ChangeBrewerLogoUrlToLogoPathToBeConsistent.resx">
+      <DependentUpon>201609020448314_ChangeBrewerLogoUrlToLogoPathToBeConsistent.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
