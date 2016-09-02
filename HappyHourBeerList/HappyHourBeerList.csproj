@@ -217,6 +217,7 @@
     <Compile Include="Controllers\Api\BarsApiController.cs" />
     <Compile Include="Controllers\BarController.cs" />
     <Compile Include="Controllers\BeerController.cs" />
+    <Compile Include="Controllers\BrewerController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
     <Compile Include="Dtos\AddressDto.cs" />
@@ -305,6 +306,10 @@
     <Compile Include="Migrations\201609012338177_RemoveUnnecessaryAddressComplexityFromBarandBrewerModels.Designer.cs">
       <DependentUpon>201609012338177_RemoveUnnecessaryAddressComplexityFromBarandBrewerModels.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201609020406242_AddGooglePlaceIdToBrewer.cs" />
+    <Compile Include="Migrations\201609020406242_AddGooglePlaceIdToBrewer.Designer.cs">
+      <DependentUpon>201609020406242_AddGooglePlaceIdToBrewer.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\Bar.cs" />
@@ -317,6 +322,7 @@
     <Compile Include="Startup.cs" />
     <Compile Include="ViewModels\BarFormViewModel.cs" />
     <Compile Include="ViewModels\BeerFormViewModel.cs" />
+    <Compile Include="ViewModels\BrewerFormViewModel.cs" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Content\bootstrap.css" />
@@ -388,6 +394,8 @@
     <Content Include="Views\Shared\EditorTemplates\Address.cshtml" />
     <Content Include="Views\Beer\Index.cshtml" />
     <Content Include="Views\Beer\BeerForm.cshtml" />
+    <Content Include="Views\Brewer\BrewerForm.cshtml" />
+    <Content Include="Views\Brewer\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -460,6 +468,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201609012338177_RemoveUnnecessaryAddressComplexityFromBarandBrewerModels.resx">
       <DependentUpon>201609012338177_RemoveUnnecessaryAddressComplexityFromBarandBrewerModels.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201609020406242_AddGooglePlaceIdToBrewer.resx">
+      <DependentUpon>201609020406242_AddGooglePlaceIdToBrewer.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

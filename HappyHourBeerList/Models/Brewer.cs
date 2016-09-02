@@ -13,6 +13,7 @@ namespace HappyHourBeerList.Models
         public int BrewerId { get; set; }
         public string Name { get; set; }
         public string Description { get; set; }
+        public string GooglePlaceId { get; set; }
         public string LogoUrl { get; set; }
 
         //Address Information BEGIN:

@@ -23,6 +23,7 @@ namespace HappyHourBeerList.App_Start
             Mapper.CreateMap<Bar, BarFormViewModel>();
             Mapper.CreateMap<BarFormViewModel, Bar>();
             Mapper.CreateMap<Beer, Beer>();
+            Mapper.CreateMap<BrewerFormViewModel, Brewer>();
         }
     }
 }

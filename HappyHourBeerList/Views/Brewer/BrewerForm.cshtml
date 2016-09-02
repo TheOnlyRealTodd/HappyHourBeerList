@@ -1,0 +1,63 @@
+﻿@model HappyHourBeerList.ViewModels.BrewerFormViewModel
+@{
+    ViewBag.Title = "Brewer Editor";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<div class="form">
+    @if (Model.IsNew)
+    {
+        <h2 class="customForm">Add New Brewer</h2>
+    }
+    else
+    {
+        <h2 class="customForm">Edit Bar: @Model.Brewer.Name</h2>
+    }
+
+
+    @using (Html.BeginForm("Save", "Bar"))
+    {
+        @Html.ValidationSummary()
+        <div class="form-group">
+            @Html.LabelFor(m => m.Brewer.Name)
+            @Html.TextBoxFor(m => m.Brewer.Name, new { @class = "form-control" })
+            @Html.ValidationMessageFor(m => m.Brewer.Name)
+        </div>
+        <div class="form-group">
+            @Html.LabelFor(m => m.Brewer.GooglePlaceId) (<a target="_blank" href="https://developers.google.com/maps/documentation/javascript/examples/places-placeid-finder">Get it</a>)
+            @Html.TextBoxFor(m => m.Brewer.GooglePlaceId, new { @class = "form-control" })
+            @Html.ValidationMessageFor(m => m.Brewer.GooglePlaceId)
+        </div>
+
+
+        <div class="form-group">
+            @Html.LabelFor(m => m.Brewer.Number)
+            @Html.TextBoxFor(m => m.Brewer.Number, new { @class = "form-control", @type = "number" })
+        </div>
+        <div class="form-group">
+            @Html.LabelFor(m => m.Brewer.StreetName)
+            @Html.TextBoxFor(m => m.Brewer.StreetName, new { @class = "form-control" })
+        </div>
+        <div class="form-group">
+            @Html.LabelFor(m => m.Brewer.City)
+            @Html.TextBoxFor(m => m.Brewer.City, new { @class = "form-control" })
+        </div>
+        <div class="form-group">
+            @Html.LabelFor(m => m.Brewer.State)
+            @Html.TextBoxFor(m => m.Brewer.State, new { @class = "form-control" })
+        </div>
+        <div class="form-group">
+            @Html.LabelFor(m => m.Brewer.ZipCode)
+            @Html.TextBoxFor(m => m.Brewer.ZipCode, new { @class = "form-control", @type = "number" })
+            @Html.ValidationMessageFor(m => m.Brewer.ZipCode)
+        </div>
+        @*You could actually put this form into a separate file like so: See Address.cshtml in EditorTemplates folder
+            @Html.EditorFor(m => m.Address)*@
+
+
+        @Html.HiddenFor(m => m.Brewer.BrewerId)
+        @Html.AntiForgeryToken()
+        <button type="submit" class="btn btn-primary">Save</button>
+
+    }
+</div>
+
