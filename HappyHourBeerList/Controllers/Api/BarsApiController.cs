@@ -49,7 +49,7 @@ namespace HappyHourBeerList.Controllers.Api
             bar.LastUpdated = DateTime.UtcNow;
             _context.Bars.Add(bar);
             _context.SaveChanges();
-            barDto.BarId = bar.BarId;
+            barDto.Bar.BarId = bar.BarId;
             return Created(new Uri(Request.RequestUri + "/" + bar.BarId), barDto);
         }
 

@@ -15,77 +15,180 @@
     }
 
 
-    @using (Html.BeginForm("Save", "Bar"))
-    {
-        @Html.ValidationSummary()
-        <div class="form-group">
-            @Html.LabelFor(m => m.Bar.Name)
-            @Html.TextBoxFor(m => m.Bar.Name, new { @class = "form-control" })
-            @Html.ValidationMessageFor(m => m.Bar.Name)
-        </div>
-        <div class="form-group">
-            @Html.LabelFor(m => m.Bar.GooglePlaceId) (<a target="_blank" href="https://developers.google.com/maps/documentation/javascript/examples/places-placeid-finder">Get it</a>)
-            @Html.TextBoxFor(m => m.Bar.GooglePlaceId, new { @class = "form-control" })
-            @Html.ValidationMessageFor(m => m.Bar.GooglePlaceId)
-        </div>
+<form id="barForm">
+    @Html.ValidationSummary()
+    <div class="form-group">
+        @Html.LabelFor(m => m.Bar.Name)
+        @Html.TextBoxFor(m => m.Bar.Name, new {@class = "form-control"})
+        @Html.ValidationMessageFor(m => m.Bar.Name)
+    </div>
+    <div class="form-group">
+        @Html.LabelFor(m => m.Bar.GooglePlaceId) (<a target="_blank" href="https://developers.google.com/maps/documentation/javascript/examples/places-placeid-finder">Get it</a>)
+        @Html.TextBoxFor(m => m.Bar.GooglePlaceId, new {@class = "form-control"})
+        @Html.ValidationMessageFor(m => m.Bar.GooglePlaceId)
+    </div>
 
-        <div class="form-group">
-            @Html.LabelFor(m => m.Bar.SundayDiscounts)
-            @Html.TextAreaFor(m => m.Bar.SundayDiscounts, new { @class = "form-control" })
-        </div>
-        <div class="form-group">
-            @Html.LabelFor(m => m.Bar.MondayDiscounts)
-            @Html.TextAreaFor(m => m.Bar.MondayDiscounts, new { @class = "form-control" })
-        </div>
+    <div class="form-group">
+        @Html.LabelFor(m => m.Bar.SundayDiscounts)
+        @Html.TextAreaFor(m => m.Bar.SundayDiscounts, new {@class = "form-control"})
+    </div>
+    <div class="form-group">
+        @Html.LabelFor(m => m.Bar.MondayDiscounts)
+        @Html.TextAreaFor(m => m.Bar.MondayDiscounts, new {@class = "form-control"})
+    </div>
 
-        <div class="form-group">
-            @Html.LabelFor(m => m.Bar.TuesdayDiscounts)
-            @Html.TextAreaFor(m => m.Bar.TuesdayDiscounts, new { @class = "form-control" })
+    <div class="form-group">
+        @Html.LabelFor(m => m.Bar.TuesdayDiscounts)
+        @Html.TextAreaFor(m => m.Bar.TuesdayDiscounts, new {@class = "form-control"})
+    </div>
+    <div class="form-group">
+        @Html.LabelFor(m => m.Bar.WednesdayDiscounts)
+        @Html.TextAreaFor(m => m.Bar.WednesdayDiscounts, new {@class = "form-control"})
+    </div>
+    <div class="form-group">
+        @Html.LabelFor(m => m.Bar.ThursdayDiscounts)
+        @Html.TextAreaFor(m => m.Bar.ThursdayDiscounts, new {@class = "form-control"})
+    </div>
+    <div class="form-group">
+        @Html.LabelFor(m => m.Bar.FridayDiscounts)
+        @Html.TextAreaFor(m => m.Bar.FridayDiscounts, new {@class = "form-control"})
+    </div>
+    <div class="form-group">
+        @Html.LabelFor(m => m.Bar.SaturdayDiscounts)
+        @Html.TextAreaFor(m => m.Bar.SaturdayDiscounts, new {@class = "form-control"})
+    </div>
+    <div class="form-group">
+        @Html.LabelFor(m => m.Bar.Number)
+        @Html.TextBoxFor(m => m.Bar.Number, new {@class = "form-control", @type = "number"})
+    </div>
+    <div class="form-group">
+        @Html.LabelFor(m => m.Bar.StreetName)
+        @Html.TextBoxFor(m => m.Bar.StreetName, new {@class = "form-control"})
+    </div>
+    <div class="form-group">
+        @Html.LabelFor(m => m.Bar.City)
+        @Html.TextBoxFor(m => m.Bar.City, new {@class = "form-control"})
+    </div>
+    <div class="form-group">
+        @Html.LabelFor(m => m.Bar.State)
+        @Html.TextBoxFor(m => m.Bar.State, new {@class = "form-control"})
+    </div>
+    <div class="form-group">
+        @Html.LabelFor(m => m.Bar.ZipCode)
+        @Html.TextBoxFor(m => m.Bar.ZipCode, new {@class = "form-control", @type = "number"})
+        @Html.ValidationMessageFor(m => m.Bar.ZipCode)
+    </div>
+
+    <div class="form-group">
+        <label>Beers On Tap</label>
+        <div class="tt-container">
+            <input id="beer" name="beer" data-rule-validBeer="true" required type="text" value="" class="form-control"/>
         </div>
-        <div class="form-group">
-            @Html.LabelFor(m => m.Bar.WednesdayDiscounts)
-            @Html.TextAreaFor(m => m.Bar.WednesdayDiscounts, new { @class = "form-control" })
+    </div>
+    <div class="row">
+        <div class="col-md-4 col-sm-4">
+            <ul id="beers" class="list-group">
+                
+            </ul>
         </div>
-        <div class="form-group">
-            @Html.LabelFor(m => m.Bar.ThursdayDiscounts)
-            @Html.TextAreaFor(m => m.Bar.ThursdayDiscounts, new { @class = "form-control" })
-        </div>
-        <div class="form-group">
-            @Html.LabelFor(m => m.Bar.FridayDiscounts)
-            @Html.TextAreaFor(m => m.Bar.FridayDiscounts, new { @class = "form-control" })
-        </div>
-        <div class="form-group">
-            @Html.LabelFor(m => m.Bar.SaturdayDiscounts)
-            @Html.TextAreaFor(m => m.Bar.SaturdayDiscounts, new { @class = "form-control" })
-        </div>
-        <div class="form-group">
-            @Html.LabelFor(m => m.Bar.Number)
-            @Html.TextBoxFor(m => m.Bar.Number, new { @class = "form-control", @type = "number" })
-        </div>
-        <div class="form-group">
-            @Html.LabelFor(m => m.Bar.StreetName)
-            @Html.TextBoxFor(m => m.Bar.StreetName, new { @class = "form-control" })
-        </div>
-        <div class="form-group">
-            @Html.LabelFor(m => m.Bar.City)
-            @Html.TextBoxFor(m => m.Bar.City, new { @class = "form-control" })
-        </div>
-        <div class="form-group">
-            @Html.LabelFor(m => m.Bar.State)
-            @Html.TextBoxFor(m => m.Bar.State, new { @class = "form-control" })
-        </div>
-        <div class="form-group">
-            @Html.LabelFor(m => m.Bar.ZipCode)
-            @Html.TextBoxFor(m => m.Bar.ZipCode, new { @class = "form-control", @type = "number" })
-            @Html.ValidationMessageFor(m => m.Bar.ZipCode)
-        </div>
-        @*You could actually put this form into a separate file like so: See Address.cshtml in EditorTemplates folder
-            @Html.EditorFor(m => m.Address)*@
+    </div>
+    @*You could actually put this form into a separate file like so: See Address.cshtml in EditorTemplates folder
+                @Html.EditorFor(m => m.Address)*@
 
 
-        @Html.HiddenFor(m => m.Bar.BarId)
-        @Html.AntiForgeryToken()
-        <button type="submit" class="btn btn-primary">Save</button>
+    @Html.HiddenFor(m => m.Bar.BarId)
+    @Html.AntiForgeryToken()
+    <button type="submit" class="btn btn-primary">Save</button>
 
     }
-</div>
+</form>
+@section scripts{
+    @Scripts.Render("~/bundles/jqueryval")
+    <script>
+var vm = {
+                    beerIds: []
+                };
+        @*        var customers = new Bloodhound({
+                    datumTokenizer: Bloodhound.tokenizers.obj.whitespace('name'),
+                    queryTokenizer: Bloodhound.tokenizers.whitespace,
+                    remote: {
+                        url: '/api/CustomersApi?query=%QUERY',
+                        wildcard: '%QUERY'
+                    }
+                });
+
+                $('#customer')
+                    .typeahead({
+                        minLength: 3,
+                        highlight: true
+                    },
+                    {
+                        name: 'customers',
+                        display: 'name',
+                        source: customers
+                    })
+                    .on("typeahead:select",
+                        function(e, customer) {
+                            vm.customerId = customer.id;
+                        });
+            *@
+
+                var beers = new Bloodhound({
+                    datumTokenizer: Bloodhound.tokenizers.obj.whitespace('name'),
+                    queryTokenizer: Bloodhound.tokenizers.whitespace,
+                    remote: {
+                        url: '/api/BeersApi?query=%QUERY',
+                        wildcard: '%QUERY'
+                    }
+                });
+
+                $('#beer')
+                    .typeahead({
+                        minLength: 3,
+                        highlight: true
+                    },
+                    {
+                        name: 'beers',
+                        display: 'name',
+                        source: beers
+                    }).on("typeahead:select", function(e, beer) {
+                        $("#beers").append("<li class='list-group-item'>"+beer.name+"</li>");
+
+                        $("#beer").typeahead("val","");
+
+                        vm.beerIds.push(beer.id);
+                    });
+                $.validator.addMethod("validBeer",
+                    function() {
+                        return vm.beerIds.length > 0;
+                    },
+                    "At least 1 beer must be entered.");
+
+                //$.validator.addMethod("validCustomer",
+                //    function() {
+                //        return vm.customerId && vm.customerId !== 0;
+                //    }, "Please select a valid customer.");
+             var validator =   $("#barForm").validate({
+                    submitHandler: function() {
+                        $.ajax({
+                                url: "/BarsApi/CreateBar",
+                                method: "post",
+                                data: vm
+
+                            })
+                            .done(function() {
+                                toastr.success("The beer has been processed!");
+                                $("#beer").typeahead("val","");
+                                $("#beers").empty();
+
+                                vm ={ beerIds: [] };
+                                validator.resetForm();
+                            })
+                            .fail(function() {
+                                toastr.error("Sorry, there was an error.");
+                            });
+                        return false;
+                    }
+                });
+    </script>
+    }
